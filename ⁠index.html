@@ -1,0 +1,345 @@
+<!DOCTYPE html>
+<html lang="tr">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Boğaziçi Perde Sistemleri | Modern & Akıllı Perde Çözümleri</title>
+    <!-- Google Fonts & FontAwesome -->
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;500;600;700&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css">
+    
+    <style>
+        :root {
+            --primary: #1e3a8a;
+            --primary-light: #3b82f6;
+            --accent: #25d366;
+            --dark: #0f172a;
+            --gray-bg: #f8fafc;
+            --card-bg: #ffffff;
+            --text: #334155;
+            --radius: 16px;
+            --shadow: 0 10px 25px -5px rgba(0, 0, 0, 0.05), 0 8px 10px -6px rgba(0, 0, 0, 0.01);
+        }
+
+        * {
+            box-sizing: border-box;
+            margin: 0;
+            padding: 0;
+            font-family: 'Poppins', sans-serif;
+        }
+
+        body {
+            background-color: var(--gray-bg);
+            color: var(--text);
+            line-height: 1.6;
+            padding-bottom: 80px;
+        }
+
+        /* Header / Navbar */
+        header {
+            background: rgba(255, 255, 255, 0.95);
+            backdrop-filter: blur(10px);
+            position: sticky;
+            top: 0;
+            z-index: 100;
+            box-shadow: 0 1px 3px rgba(0,0,0,0.05);
+            padding: 1rem 5%;
+            display: flex;
+            justify-content: space-between;
+            align-items: center;
+        }
+
+        .logo {
+            font-size: 1.3rem;
+            font-weight: 700;
+            color: var(--primary);
+            display: flex;
+            align-items: center;
+            gap: 8px;
+        }
+
+        /* Hero Section */
+        .hero {
+            background: linear-gradient(135deg, #1e3a8a 0%, #1e1b4b 100%);
+            color: white;
+            padding: 3rem 5% 4rem;
+            border-radius: 0 0 32px 32px;
+            text-align: center;
+        }
+
+        .hero h1 {
+            font-size: 2rem;
+            font-weight: 700;
+            margin-bottom: 1rem;
+            line-height: 1.2;
+        }
+
+        .hero p {
+            font-size: 0.95rem;
+            opacity: 0.9;
+            margin-bottom: 1.5rem;
+            font-weight: 300;
+        }
+
+        .hero-badges {
+            display: flex;
+            justify-content: center;
+            gap: 12px;
+            flex-wrap: wrap;
+            margin-bottom: 2rem;
+        }
+
+        .badge {
+            background: rgba(255, 255, 255, 0.15);
+            padding: 6px 14px;
+            border-radius: 20px;
+            font-size: 0.8rem;
+            backdrop-filter: blur(5px);
+        }
+
+        /* Action Buttons */
+        .btn {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            gap: 8px;
+            padding: 12px 24px;
+            border-radius: 12px;
+            font-weight: 600;
+            text-decoration: none;
+            transition: all 0.3s ease;
+            width: 100%;
+            max-width: 300px;
+        }
+
+        .btn-whatsapp {
+            background-color: var(--accent);
+            color: white;
+            box-shadow: 0 4px 15px rgba(37, 211, 102, 0.3);
+        }
+
+        .btn-whatsapp:hover {
+            transform: translateY(-2px);
+            box-shadow: 0 6px 20px rgba(37, 211, 102, 0.4);
+        }
+
+        /* Container & Cards */
+        .container {
+            padding: 2rem 5%;
+            max-width: 1200px;
+            margin: 0 auto;
+        }
+
+        .section-title {
+            font-size: 1.4rem;
+            font-weight: 700;
+            color: var(--dark);
+            margin-bottom: 1.5rem;
+            text-align: center;
+        }
+
+        .products-grid {
+            display: grid;
+            grid-template-columns: repeat(auto-fit, minmax(280px, 1fr));
+            gap: 1.5rem;
+        }
+
+        .card {
+            background: var(--card-bg);
+            border-radius: var(--radius);
+            overflow: hidden;
+            box-shadow: var(--shadow);
+            transition: transform 0.3s ease;
+        }
+
+        .card:hover {
+            transform: translateY(-5px);
+        }
+
+        .card img {
+            width: 100%;
+            height: 200px;
+            object-fit: cover;
+        }
+
+        .card-body {
+            padding: 1.2rem;
+        }
+
+        .card-title {
+            font-size: 1.1rem;
+            font-weight: 600;
+            color: var(--dark);
+            margin-bottom: 0.5rem;
+        }
+
+        .card-text {
+            font-size: 0.85rem;
+            color: #64748b;
+            margin-bottom: 1rem;
+        }
+
+        /* Contact Form */
+        .contact-section {
+            background: var(--card-bg);
+            padding: 2rem;
+            border-radius: var(--radius);
+            box-shadow: var(--shadow);
+            margin-top: 2rem;
+        }
+
+        .form-group {
+            margin-bottom: 1rem;
+        }
+
+        .form-group label {
+            display: block;
+            font-size: 0.85rem;
+            font-weight: 500;
+            margin-bottom: 0.4rem;
+        }
+
+        .form-group input, .form-group textarea {
+            width: 100%;
+            padding: 12px;
+            border: 1px solid #e2e8f0;
+            border-radius: 8px;
+            outline: none;
+            font-size: 0.9rem;
+        }
+
+        .form-group input:focus, .form-group textarea:focus {
+            border-color: var(--primary-light);
+        }
+
+        .btn-submit {
+            background: var(--primary);
+            color: white;
+            border: none;
+            cursor: pointer;
+            width: 100%;
+        }
+
+        /* Floating WhatsApp Button */
+        .float-wa {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            background-color: var(--accent);
+            color: white;
+            width: 60px;
+            height: 60px;
+            border-radius: 50%;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            font-size: 30px;
+            box-shadow: 0 4px 12px rgba(0,0,0,0.2);
+            z-index: 1000;
+            text-decoration: none;
+        }
+
+        /* Footer */
+        footer {
+            text-align: center;
+            padding: 2rem 5%;
+            color: #94a3b8;
+            font-size: 0.8rem;
+        }
+    </style>
+</head>
+<body>
+
+    <header>
+        <div class="logo">
+            <i class="fa-solid fa-blinds"></i> Boğaziçi Perde
+        </div>
+        <a href="tel:+905327254807" style="color: var(--primary); text-decoration: none; font-weight: 600;">
+            <i class="fa-solid fa-phone"></i> Ara
+        </a>
+    </header>
+
+    <section class="hero">
+        <h1>Mekânlarınıza Özel Mükemmel Perde Çözümleri</h1>
+        <p>Zebra, stor, dikey ve motorlu akıllı perde sistemlerinde estetik ve konforu bir arada sunuyoruz.</p>
+        
+        <div class="hero-badges">
+            <span class="badge"><i class="fa-solid fa-check"></i> Ücretsiz Keşif</span>
+            <span class="badge"><i class="fa-solid fa-shield-halved"></i> 2 Yıl Garanti</span>
+            <span class="badge"><i class="fa-solid fa-award"></i> 25 Yıllık Tecrübe</span>
+        </div>
+
+        <a href="https://wa.me/905327254807?text=Merhaba,%20perde%20modelleriniz%20hakk%C4%B1nda%20bilgi%20ve%20fiyat%20teklifi%20almak%20istiyorum." class="btn btn-whatsapp" target="_blank">
+            <i class="fa-brands fa-whatsapp"></i> WhatsApp'tan Hızlı Fiyat Al
+        </a>
+    </section>
+
+    <div class="container">
+        <h2 class="section-title">Geniş Ürün Yelpazesi</h2>
+
+        <div class="products-grid">
+            
+            <!-- Motorlu Perde -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1513694203232-719a280e022f?auto=format&fit=crop&w=800&q=80" alt="Motorlu Perde Systems">
+                <div class="card-body">
+                    <h3 class="card-title">Motorlu & Akıllı Perde</h3>
+                    <p class="card-text">Somfy ve Tuya entegrasyonlu, kumandalı veya telefon kontrollü otomatik sistemler.</p>
+                </div>
+            </div>
+
+            <!-- Zebra Perde -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1615873968403-89e068629265?auto=format&fit=crop&w=800&q=80" alt="Zebra Perde">
+                <div class="card-body">
+                    <h3 class="card-title">Zebra Perde Sistemleri</h3>
+                    <p class="card-text">Hem tül hem güneşlik işlevini üstlenen, ışık geçişini kolayca ayarlayabileceğiniz mekanizmalar.</p>
+                </div>
+            </div>
+
+            <!-- Stor & Blackout -->
+            <div class="card">
+                <img src="https://images.unsplash.com/photo-1540518614846-7ede433c5173?auto=format&fit=crop&w=800&q=80" alt="Stor Perde">
+                <div class="card-body">
+                    <h3 class="card-title">Stor & Blackout (Karartma)</h3>
+                    <p class="card-text">Ofis ve yatak odaları için %100 ışık kesen blackout seçenekleri veya yarı geçirgen şık kumaşlar.</p>
+                </div>
+            </div>
+
+        </div>
+
+        <!-- İletişim Formu -->
+        <div class="contact-section">
+            <h2 class="section-title" style="margin-bottom: 0.5rem;">Ücretsiz Keşif Formu</h2>
+            <p style="text-align: center; color: #64748b; font-size: 0.85rem; margin-bottom: 1.5rem;">Formu doldurun, adresiniz için en uygun numunelerle mimar ekibimizi yönlendirelim.</p>
+
+            <form action="mailto:tunctekin@gmail.com" method="post" enctype="text/plain">
+                <div class="form-group">
+                    <label>Adınız Soyadınız</label>
+                    <input type="text" name="Ad_Soyad" placeholder="Örn: Ahmet Yılmaz" required>
+                </div>
+                <div class="form-group">
+                    <label>Telefon Numaranız</label>
+                    <input type="tel" name="Telefon" placeholder="05XX XXX XX XX" required>
+                </div>
+                <div class="form-group">
+                    <label>Notunuz veya İstekleriniz</label>
+                    <textarea name="Not" rows="3" placeholder="Keşif veya perde modelleriyle ilgili notunuz..."></textarea>
+                </div>
+                <button type="submit" class="btn btn-submit">Keşif Talebini Gönder</button>
+            </form>
+        </div>
+    </div>
+
+    <!-- Yüzen WhatsApp Butonu -->
+    <a href="https://wa.me/905327254807?text=Merhaba,%20bilgi%20almak%20istiyorum." class="float-wa" target="_blank">
+        <i class="fa-brands fa-whatsapp"></i>
+    </a>
+
+    <footer>
+        <p>&copy; 2026 Boğaziçi Perde Sistemleri. Tüm hakları saklıdır.</p>
+        <p style="margin-top: 5px;">İletişim: <a href="mailto:tunctekin@gmail.com" style="color: inherit;">tunctekin@gmail.com</a> | +90 532 725 48 07</p>
+    </footer>
+
+</body>
+</html>
